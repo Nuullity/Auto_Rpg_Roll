@@ -1,0 +1,5 @@
+C:\Users\Marcos\Desktop\Auto Rpg Roll\Auto_Rpg_Roll.exe
+C:\Users\Marcos\Desktop\Auto Rpg Roll\Auto_Rpg_Roll.dll
+C:\Users\Marcos\Desktop\Auto Rpg Roll\Auto_Rpg_Roll.deps.json
+C:\Users\Marcos\Desktop\Auto Rpg Roll\Auto_Rpg_Roll.runtimeconfig.json
+C:\Users\Marcos\Desktop\Auto Rpg Roll\Auto_Rpg_Roll.pdb
