@@ -8,21 +8,19 @@ namespace Auto_Rpg_Roll
         {
 
             char genero = 'a';
-            int pontos_atributos = 27;
             int provisorio = 0;
+            int pontos_atributos = -1; ; // gambiarra para while 
 
             Personagem personagem = new Personagem();
             personagem.Raca = -1;
+            personagem.Classe = -1;
+
 
             /*
             Console.WriteLine(" -----------------------------------------------------");
             Console.WriteLine(" Nome:            Idade:             Classe:          ");
             Console.WriteLine(" Raça:            Pontos de Vida:                     ");
             Console.WriteLine("                                                      ");
-            Console.WriteLine(" Suas Proeficiencias:                                 ");
-            Console.WriteLine("  >                                                   ");
-            Console.WriteLine("  >                                                   ");
-            Console.WriteLine("  >                                                   ");
             Console.WriteLine("                                                      ");
             Console.WriteLine(" Carisma:                                             ");
             Console.WriteLine(" Esperteza:                                           ");
@@ -74,84 +72,119 @@ namespace Auto_Rpg_Roll
 
             Console.Write("Qual será sua idade ? ");
             personagem.Idade = int.Parse(Console.ReadLine());
-
-            Console.Clear();
-            // fazer  atribuição de atributos, com base na funçao Atributo
-            Console.WriteLine($"Voce irá definir agr os pontos de atributos de seu personagem");
-            Console.WriteLine("----------------------------------------------");
-            Console.WriteLine("|          Valor Custo |    Valor Custo      |");
-            Console.WriteLine("|        (1)  8     0  | (5)  12     4       |");
-            Console.WriteLine("|        (2)  9     1  | (6)  13     5       |");
-            Console.WriteLine("|        (3)  10    2  | (7)  14     7       |");
-            Console.WriteLine("|        (4)  11    3  | (8)  15     9       |");
-            Console.WriteLine("|                                            |");
-            Console.WriteLine("|        Caso fique com Pontos negativos     |");
-            Console.WriteLine("|   o software irá se fechar automaticamente |");
-            Console.WriteLine("----------------------------------------------");
-
-            Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Carisma: ");
-            personagem.C = provisorio = Atributo(int.Parse(Console.ReadLine()));
-            pontos_atributos = pontos_atributos - Custo(provisorio);
-            Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Esperteza: ");
-            personagem.E = provisorio = Atributo(int.Parse(Console.ReadLine()));
-            pontos_atributos = pontos_atributos - Custo(provisorio);
-
-            Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Inteligência: ");
-            personagem.I = provisorio = Atributo(int.Parse(Console.ReadLine()));
-            pontos_atributos = pontos_atributos - Custo(provisorio);
-
-            Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Força: ");
-            personagem.F = provisorio = Atributo(int.Parse(Console.ReadLine()));
-            pontos_atributos = pontos_atributos - Custo(provisorio);
-
-            Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Agilidade: ");
-            personagem.A = provisorio = Atributo(int.Parse(Console.ReadLine()));
-            pontos_atributos = pontos_atributos - Custo(provisorio);
-            Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Resistência: ");
-            personagem.C = provisorio = Atributo(int.Parse(Console.ReadLine()));
-            pontos_atributos = pontos_atributos - Custo(provisorio);
-
             Console.Clear();
 
-            if (pontos_atributos >= 0)
+
+
+            while (pontos_atributos < 0)
+            {
+                pontos_atributos = 27;
+                personagem.C = 0;
+                personagem.E = 0;
+                personagem.I = 0;
+                personagem.F = 0;
+                personagem.A = 0;
+                personagem.R = 0;
+
+
+                // fazer  atribuição de atributos, com base na funçao Atributo
+                Console.WriteLine($"Voce irá definir agr os pontos de atributos de seu personagem");
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("|          Valor Custo |    Valor Custo      |");
+                Console.WriteLine("|        (1)  8     0  | (5)  12     4       |");
+                Console.WriteLine("|        (2)  9     1  | (6)  13     5       |");
+                Console.WriteLine("|        (3)  10    2  | (7)  14     7       |");
+                Console.WriteLine("|        (4)  11    3  | (8)  15     9       |");
+                Console.WriteLine("|                                            |");
+                Console.WriteLine("|        Caso fique com Pontos negativos     |");
+                Console.WriteLine("|   o software irá se resetar automaticamente |");
+                Console.WriteLine("----------------------------------------------");
+
+                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Carisma: ");
+                personagem.C = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                pontos_atributos = pontos_atributos - Custo(provisorio);
+
+
+                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Esperteza: ");
+                personagem.E = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                pontos_atributos = pontos_atributos - Custo(provisorio);
+
+                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Inteligência: ");
+                personagem.I = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                pontos_atributos = pontos_atributos - Custo(provisorio);
+
+                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Força: ");
+                personagem.F = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                pontos_atributos = pontos_atributos - Custo(provisorio);
+
+                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Agilidade: ");
+                personagem.A = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                pontos_atributos = pontos_atributos - Custo(provisorio);
+                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Resistência: ");
+                personagem.R = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                pontos_atributos = pontos_atributos - Custo(provisorio);
+
+                Console.Clear();
+            }
+
+
+
+
+
+
+
+
+
+            // Raça e classe são jogados na Class personagem e la é feito os processos
+            //definir raça
+
+
+            while (personagem.Raca == -1)
+            {
+                Console.Clear();
+                Console.WriteLine("---------------------------------------------------------------");
+                Console.WriteLine("|                    >Escolha sua Raça<                       |");
+                Console.WriteLine("|                                                             |");
+                Console.WriteLine("|(1) - Anão da Colina               ( 8) - Humano             |");
+                Console.WriteLine("|(2) - Anão da Montanha             ( 9) - Draconato          |");
+                Console.WriteLine("|(3) - Alto Elfo                    (10) - Gnomo da Floresta  |");
+                Console.WriteLine("|(4) - Elfo da Floresta             (11) - Gnomo das Rochas   |");
+                Console.WriteLine("|(5) - Elfo Negro                   (12) - Meio Elfo          |");
+                Console.WriteLine("|(6) - Halfling dos Pés Leves       (13) - Meio Orc           |");
+                Console.WriteLine("|(7) - Halfling Robusto             (14) - Tiefling           |");
+                Console.WriteLine("---------------------------------------------------------------");
+
+
+
+                personagem.Raca = int.Parse(Console.ReadLine());
+                personagem.PontosRaca();
+                //mete modificador nos atruibutos
+                personagem.BC = Modificador(personagem.C, personagem.BC);
+
+                personagem.BE = Modificador(personagem.E, personagem.BE);
+
+                personagem.BI = Modificador(personagem.I, personagem.BI);
+
+                personagem.BF = Modificador(personagem.F, personagem.BF);
+
+                personagem.BA = Modificador(personagem.A, personagem.BA);
+
+                personagem.BR = Modificador(personagem.R, personagem.BR);
+
+            }
+
+
+            // CONTINUAR A APRTIR DAQUI, CRIAÇÃO DE SISTEMA DE CLASSES DE FORMA QUE LIMITE AS PROEFICIENCIAS DISPONIVEIS ASSIM COMO CALCULE A VIDA DO PLAYER, NECESSARIO VER COMANDO PARA GERAR NUMERO ALEATORIO EM UM RANGE)
+            //definir classe 
+
+
+
+
+
+            while (personagem.Classe == -1)
             {
 
-
-
-
-
-                // Raça e classe são jogados na Class personagem e la é feito os processos
-                //definir raça
-
-
-                while (personagem.Raca == -1)
-                {
-                    Console.Clear();
-                    Console.WriteLine("---------------------------------------------------------------");
-                    Console.WriteLine("|                    >Escolha sua Raça<                       |");
-                    Console.WriteLine("|                                                             |");
-                    Console.WriteLine("|(1) - Anão da Colina               ( 8) - Humano             |");
-                    Console.WriteLine("|(2) - Anão da Montanha             ( 9) - Draconato          |");
-                    Console.WriteLine("|(3) - Alto Elfo                    (10) - Gnomo da Floresta  |");
-                    Console.WriteLine("|(4) - Elfo da Floresta             (11) - Gnomo das Rochas   |");
-                    Console.WriteLine("|(5) - Elfo Negro                   (12) - Meio Elfo          |");
-                    Console.WriteLine("|(6) - Halfling dos Pés Leves       (13) - Meio Orc           |");
-                    Console.WriteLine("|(7) - Halfling Robusto             (14) - Tiefling           |");
-                    Console.WriteLine("---------------------------------------------------------------");
-
-
-
-                    personagem.Raca = int.Parse(Console.ReadLine());
-                    personagem.PontosRaca();
-
-
-
-                }
-
-
-                // CONTINUAR A APRTIR DAQUI, CRIAÇÃO DE SISTEMA DE CLASSES DE FORMA QUE LIMITE AS PROEFICIENCIAS DISPONIVEIS ASSIM COMO CALCULE A VIDA DO PLAYER, NECESSARIO VER COMANDO PARA GERAR NUMERO ALEATORIO EM UM RANGE)
-                //definir classe 
-
+                Console.Clear();
 
                 Console.WriteLine("---------------------------------------------------------------");
                 Console.WriteLine("|                    >Escolha sua Classe<                     |");
@@ -163,139 +196,189 @@ namespace Auto_Rpg_Roll
                 Console.WriteLine("|(5) - Druida                       (11) - Paladino           |");
                 Console.WriteLine("|(6) - Feiticeiro                   (12) - Patrulheiro        |");
                 Console.WriteLine("---------------------------------------------------------------");
-                Console.WriteLine("Work In Progress................");
-
-
-
-
                 personagem.Classe = int.Parse(Console.ReadLine());
-                personagem.Classe = int.Parse(Console.ReadLine());
-                personagem.Classe = int.Parse(Console.ReadLine());
-
-
-
-
-
-
-
-
-
-
-
-
-
+                personagem.BonusClasse();
 
 
 
             }
 
-            static int Atributo(int m)
-            {
-
-                switch (m)
-                {
-
-                    case 1:
-
-                        m = 8;
+            Console.Clear();
 
 
+            personagem.NomeClasse();
 
 
-
-                        break;
-                    case 2:
-                        m = 9;
+            personagem.NomeRaca();
 
 
-
-                        break;
-                    case 3:
-                        m = 10;
-
-
-                        break;
-                    case 4:
-                        m = 11;
-
-
-                        break;
-                    case 5:
-                        m = 12;
-
-                        break;
-                    case 6:
-                        m = 13;
-
-                        break;
-                    case 7:
-                        m = 14;
-
-                        break;
-                    case 8:
-                        m = 15;
-
-                        break;
-                        
-                }
-                return m;
-
-
-
-            }
-            static int Custo(int m)
-            {
-                switch (m)
-                {
-
-                    case 1:
-
-                        m = -0;
+            Console.WriteLine(" -----------------------------------------------------");
+            Console.WriteLine($" Nome: {personagem.Nome}     Idade: {personagem.Idade}     Classe: {personagem.classeName}         ");
+            Console.WriteLine($" Raça: {personagem.RacaName} Pontos de Vida: {personagem.PontosVida}                     ");
+            Console.WriteLine("                                                      ");
+            Console.WriteLine("                                                      ");
+            Console.WriteLine($" Carisma: {personagem.C} - ({personagem.BC})    ");
+            Console.WriteLine($" Esperteza: {personagem.E} - ({personagem.BE})  ");
+            Console.WriteLine($" Inteligência: {personagem.I} - ({personagem.BI}) ");
+            Console.WriteLine($" Força: {personagem.F} - ({personagem.BF}) ");
+            Console.WriteLine($" Agilidade: {personagem.A} - ({personagem.BA}) ");
+            Console.WriteLine($" Resistencia: {personagem.R} - ({personagem.BR})");
+            Console.WriteLine("                                                      ");
+            Console.WriteLine(" -----------------------------------------------------");
 
 
 
 
 
-                        break;
-                    case 2:
-                        m = -1;
 
 
 
-                        break;
-                    case 3:
-                        m = -2;
 
-                        break;
-                    case 4:
-                        m = -3;
-
-                        break;
-                    case 5:
-                        m = -4;
-                        break;
-                    case 6:
-
-                        m = -5;
-                        break;
-                    case 7:
-
-                        m = -7;
-                        break;
-                    case 8:
-                        m = -9; ;
-
-                        break;
-
-                }
-                return m;
-
-
-            }
+            Console.ReadLine();
 
 
         }
 
-    }// fechar a gambiarra do if para custo de atributo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        static int Atributo(int m)
+        {
+
+            switch (m)
+            {
+
+                case 1:
+
+                    m = 8;
+
+
+
+
+
+                    break;
+                case 2:
+                    m = 9;
+
+
+
+                    break;
+                case 3:
+                    m = 10;
+
+
+                    break;
+                case 4:
+                    m = 11;
+
+
+                    break;
+                case 5:
+                    m = 12;
+
+                    break;
+                case 6:
+                    m = 13;
+
+                    break;
+                case 7:
+                    m = 14;
+
+                    break;
+                case 8:
+                    m = 15;
+
+                    break;
+
+            }
+            return m;
+
+
+
+        }
+        static int Custo(int m)
+        {
+            switch (m)
+            {
+
+                case 1:
+
+                    m = -0;
+
+
+
+
+
+                    break;
+                case 2:
+                    m = -1;
+
+
+
+                    break;
+                case 3:
+                    m = -2;
+
+                    break;
+                case 4:
+                    m = -3;
+
+                    break;
+                case 5:
+                    m = -4;
+                    break;
+                case 6:
+
+                    m = -5;
+                    break;
+                case 7:
+
+                    m = -7;
+                    break;
+                case 8:
+                    m = -9; ;
+
+                    break;
+
+            }
+            return m;
+
+
+        }
+        static int Modificador(int m, int n)
+        {
+
+
+
+            if (m == 1) { n = -5; }
+            else if (m >= 2 && m <= 3) { n = -4; }
+            else if (m >= 4 && m <= 5) { n = -3; }
+            else if (m >= 6 && m <= 7) { n = -2; }
+            else if (m >= 8 && m <= 9) { n = -1; }
+            else if (m >= 10 && m <= 11) { n = 0; }
+            else if (m >= 12 && m <= 13) { n = 1; }
+            else if (m >= 14 && m <= 15) { n = 2; }
+
+
+            return n;
+
+
+        }
+
+
+    }
+
+
 
 }

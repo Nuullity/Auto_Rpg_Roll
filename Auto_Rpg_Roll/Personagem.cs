@@ -17,11 +17,12 @@ namespace Auto_Rpg_Roll
         public int Raca;
         public int PontosVida;
         public int C, E, I, F, A, R;
-        public int[] Pericia;
+        public int BC, BE, BI, BF, BA, BR;
 
 
 
-
+        public String classeName;
+        public String RacaName;
 
 
 
@@ -129,41 +130,87 @@ namespace Auto_Rpg_Roll
 
             return 0;
         }
-        public int PericiasClasse()
+        public int BonusClasse()
         {
             switch (Classe)
             {
 
                 case 1:
-                    Console.WriteLine("Escolha uma destas perícias");
 
-                    Console.WriteLine("--------------------------------------------------------------------");
-                    Console.WriteLine("|                   >Escolha sua Pericias<                         |");
-                    Console.WriteLine("|                                                                  |");
-                    Console.WriteLine("|(1) - Atletismo                    (4) - Adestrar Animais         |");
-                    Console.WriteLine("|(2) - Intimidação                  (5) - Natureza                 |");
-                    Console.WriteLine("|(3) - Percepção                    (6) - Sobrevivencia            |");
-                    Console.WriteLine("--------------------------------------------------------------------");
-                    Pericia[0] = int.Parse(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine("Escolha uma destas perícias");
-                    Console.WriteLine("--------------------------------------------------------------------");
-                    Console.WriteLine("|                   >Escolha sua Pericias<                         |");
-                    Console.WriteLine("|                                                                  |");
-                    Console.WriteLine("|(1) - Atletismo                    (4) - Adestrar Animais         |");
-                    Console.WriteLine("|(2) - Intimidação                  (5) - Natureza                 |");
-                    Console.WriteLine("|(3) - Percepção                    (6) - Sobrevivencia            |");
-                    Console.WriteLine("--------------------------------------------------------------------");
-                    Pericia[1] = int.Parse(Console.ReadLine());
-                    PontosVida = 12 +
-                        // erro para não me esquecer 
+                    PontosVida = 12 + BR;
 
 
+                    break;
+                case 2:
+                    PontosVida = 8 + BR;
+
+                    break;
+                case 3:
+
+                    PontosVida = 8 + BR;
+
+
+
+                    break;
+                case 4:
+
+                    PontosVida = 8 + BR;
 
 
 
 
                     break;
+
+                case 5:
+                    PontosVida = 8 + BR;
+
+
+                    break;
+                case 6:
+                    PontosVida = 6 + BR;
+
+
+                    break;
+                case 7:
+                    PontosVida = 10 + BR;
+
+
+                    break;
+                case 8:
+
+                    PontosVida = 8 + BR;
+
+                    break;
+                case 9:
+                    PontosVida = 6 + BR;
+
+
+                    break;
+                case 10:
+
+                    PontosVida = 8 + BR;
+
+
+                    break;
+                case 11:
+                    PontosVida = 10 + BR;
+
+
+                    break;
+                case 12:
+                    PontosVida = 10 + BR;
+
+
+                    break;
+
+
+
+                default:
+                    Console.WriteLine("Classe invalida");
+                    Classe = -1;
+                    break;
+
+
 
 
 
@@ -179,10 +226,163 @@ namespace Auto_Rpg_Roll
 
             return 0;
         }
+        public string NomeRaca()
+        {
+
+            switch (Raca)
+            {
+                case 1:
+                    RacaName = "Anão da Colina";
+
+                    break;
+                case 2:
+
+                    RacaName = "Anão da Montanha";
+                    break;
+                case 3:
+
+                    RacaName = "Alto Elfo";
+                    break;
+                case 4:
+
+                    RacaName = "Elfo da Floresta";
+                    break;
+                case 5:
+
+                    RacaName = "Elfo Negro";
+                    break;
+
+                case 6:
+
+
+                    RacaName = "Halfling dos Pés Leves";
+                    break;
+                case 7:
+
+                    RacaName = "Halfling Robusto";
+
+                    break;
+
+                case 8:
+
+
+                    RacaName = "Humano";
+                    break;
+                case 9:
+
+
+                    RacaName = "Draconato";
+                    break;
+
+                case 10:
+
+
+                    RacaName = "Gnomo da Floresta";
+                    break;
+
+                case 11:
+
+
+                    RacaName = "Gnomo das Rochas";
+                    break;
+
+                case 12:
+
+
+                    RacaName = "Meio Elfo";
+                    break;
+                case 13:
+
+
+                    RacaName = "Meio Orc";
+                    break;
+                case 14:
+                    RacaName = "Tiefling";
+
+
+                    break;
 
 
 
 
+            }
+
+
+
+            return "Voce não devia ver essa mensagem......";
+        }
+        public string NomeClasse()
+        {
+
+            switch (Classe)
+            {
+                case 1:
+                    classeName = "Bárbaro";
+
+                    break;
+                case 2:
+
+                    classeName = "Bardo";
+                    break;
+                case 3:
+
+                    classeName = "Bruxo";
+                    break;
+                case 4:
+
+                    classeName = "Clérigo";
+                    break;
+                case 5:
+
+                    classeName = "Druida";
+                    break;
+
+                case 6:
+
+
+                    classeName = "Feiticeiro";
+                    break;
+                case 7:
+
+                    classeName = "Guerreiro";
+
+                    break;
+
+                case 8:
+
+
+                    classeName = "Ladino";
+                    break;
+                case 9:
+
+
+                    classeName = "Mago";
+                    break;
+
+                case 10:
+
+
+                    classeName = "Monge";
+                    break;
+
+                case 11:
+
+
+                    classeName = "Paladino";
+                    break;
+
+                case 12:
+                    classeName = "Patrulheiro";
+                    break;
+                    
+
+
+            }
+            return "Voce não devia ver essa mensagem......";
+
+
+
+        }
 
 
 
