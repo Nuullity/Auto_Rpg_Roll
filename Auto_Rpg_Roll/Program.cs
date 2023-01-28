@@ -101,29 +101,39 @@ namespace Auto_Rpg_Roll
                 Console.WriteLine("----------------------------------------------");
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Carisma: ");
-                personagem.C = provisorio = Atributo(int.Parse(Console.ReadLine()));
+
+                provisorio = (int.Parse(Console.ReadLine()));
+                personagem.C = Atributo(provisorio);
                 pontos_atributos = pontos_atributos - Custo(provisorio);
 
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Esperteza: ");
-                personagem.E = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                provisorio = (int.Parse(Console.ReadLine()));
+                personagem.E = Atributo(provisorio);
                 pontos_atributos = pontos_atributos - Custo(provisorio);
+
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Inteligência: ");
-                personagem.I = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                provisorio = (int.Parse(Console.ReadLine()));
+                personagem.I = Atributo(provisorio);
                 pontos_atributos = pontos_atributos - Custo(provisorio);
 
+
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Força: ");
-                personagem.F = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                provisorio = (int.Parse(Console.ReadLine()));
+                personagem.F = Atributo(provisorio);
                 pontos_atributos = pontos_atributos - Custo(provisorio);
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Agilidade: ");
-                personagem.A = provisorio = Atributo(int.Parse(Console.ReadLine()));
-                pontos_atributos = pontos_atributos - Custo(provisorio);
-                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Resistência: ");
-                personagem.R = provisorio = Atributo(int.Parse(Console.ReadLine()));
+                provisorio = (int.Parse(Console.ReadLine()));
+                personagem.A = Atributo(provisorio);
                 pontos_atributos = pontos_atributos - Custo(provisorio);
 
+
+                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Resistência: ");
+                provisorio = (int.Parse(Console.ReadLine()));
+                personagem.R = Atributo(provisorio);
+                pontos_atributos = pontos_atributos - Custo(provisorio);
                 Console.Clear();
             }
 
