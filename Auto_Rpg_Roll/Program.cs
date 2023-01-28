@@ -104,36 +104,36 @@ namespace Auto_Rpg_Roll
 
                 provisorio = (int.Parse(Console.ReadLine()));
                 personagem.C = Atributo(provisorio);
-                pontos_atributos = pontos_atributos - Custo(provisorio);
+                pontos_atributos = pontos_atributos + Custo(provisorio);
 
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Esperteza: ");
                 provisorio = (int.Parse(Console.ReadLine()));
                 personagem.E = Atributo(provisorio);
-                pontos_atributos = pontos_atributos - Custo(provisorio);
+                pontos_atributos = pontos_atributos + Custo(provisorio);
 
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Inteligência: ");
                 provisorio = (int.Parse(Console.ReadLine()));
                 personagem.I = Atributo(provisorio);
-                pontos_atributos = pontos_atributos - Custo(provisorio);
+                pontos_atributos = pontos_atributos + Custo(provisorio);
 
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Força: ");
                 provisorio = (int.Parse(Console.ReadLine()));
                 personagem.F = Atributo(provisorio);
-                pontos_atributos = pontos_atributos - Custo(provisorio);
+                pontos_atributos = pontos_atributos + Custo(provisorio);
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Agilidade: ");
                 provisorio = (int.Parse(Console.ReadLine()));
                 personagem.A = Atributo(provisorio);
-                pontos_atributos = pontos_atributos - Custo(provisorio);
+                pontos_atributos = pontos_atributos + Custo(provisorio);
 
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Resistência: ");
                 provisorio = (int.Parse(Console.ReadLine()));
                 personagem.R = Atributo(provisorio);
-                pontos_atributos = pontos_atributos - Custo(provisorio);
+                pontos_atributos = pontos_atributos + Custo(provisorio);
                 Console.Clear();
             }
 
@@ -324,7 +324,7 @@ namespace Auto_Rpg_Roll
 
                 case 1:
 
-                    m = -0;
+                    m = 0;
 
 
 
