@@ -4,10 +4,10 @@ namespace Auto_Rpg_Roll
 {
     internal class Program
     {
-           static void Main(string[] args)
+        static void Main(string[] args)
         {
 
-            char genero = 'a';
+            string genero = "a";
             int provisorio = 0;
             int pontos_atributos = -1; ; // gambiarra para while 
 
@@ -15,7 +15,7 @@ namespace Auto_Rpg_Roll
             personagem.Raca = -1;
             personagem.Classe = -1;
 
-            
+
             /*
             Console.WriteLine(" -----------------------------------------------------");
             Console.WriteLine(" Nome:            Idade:             Classe:          ");
@@ -35,35 +35,22 @@ namespace Auto_Rpg_Roll
 
 
             // fazer com que o programa apenas prossiga com um genero valido
-            while (genero != 'M' && genero != 'm' && genero != 'N' && genero != 'n' && genero != 'F' && genero != 'f')
+            while (genero != "M" && genero != "N" && genero != "F")
             {
 
 
-                Console.Write("Olá Qual seu genero ? ");
-                Console.WriteLine("|M| |N| |F|");
-                genero = char.Parse(Console.ReadLine());
+                Console.Write("Olá Qual seu genero ? |M|  |F|: ");
+                genero = (Console.ReadLine().ToUpper());
                 Console.Clear();
 
 
-            }
-            if (genero == 'F' || genero == 'f')
-            {
 
-
-                Console.WriteLine("Olá forasteira, esta pronta para CEIFAR algumas almas?");
-            }
-            else if (genero == 'N' || genero == 'n')
-            {
-
-                Console.WriteLine("Olá forasteire, esta pronte para CEIFAR algumas almas?");
 
             }
-            else if (genero == 'M' || genero == 'm')
-            {
 
-                Console.WriteLine("Olá forasteiro, esta pronto para CEIFAR algumas almas?");
-            }
-
+            genero = Genero(genero);
+            Console.WriteLine($"Olá forasteir{genero}, esta pront{genero} para CEIFAR algumas almas?");
+           
 
             Console.Write("Qual o nome de seu Personagem ? ");
             personagem.Nome = Console.ReadLine();
@@ -71,7 +58,7 @@ namespace Auto_Rpg_Roll
 
 
             Console.Write("Qual será sua idade ? ");
-            personagem.Idade = int.Parse(Console.ReadLine());
+            personagem.Idade = Console.ReadLine();
             Console.Clear();
 
 
@@ -153,17 +140,17 @@ namespace Auto_Rpg_Roll
             while (personagem.Raca == -1)
             {
                 Console.Clear();
-                Console.WriteLine("---------------------------------------------------------------");
-                Console.WriteLine("|                    >Escolha sua Raça<                       |");
-                Console.WriteLine("|                                                             |");
-                Console.WriteLine("|(1) - Anão da Colina               ( 8) - Humano             |");
-                Console.WriteLine("|(2) - Anão da Montanha             ( 9) - Draconato          |");
-                Console.WriteLine("|(3) - Alto Elfo                    (10) - Gnomo da Floresta  |");
-                Console.WriteLine("|(4) - Elfo da Floresta             (11) - Gnomo das Rochas   |");
-                Console.WriteLine("|(5) - Elfo Negro                   (12) - Meio Elfo          |");
-                Console.WriteLine("|(6) - Halfling dos Pés Leves       (13) - Meio Orc           |");
-                Console.WriteLine("|(7) - Halfling Robusto             (14) - Tiefling           |");
-                Console.WriteLine("---------------------------------------------------------------");
+                Console.WriteLine($"---------------------------------------------------------------");
+                Console.WriteLine($"|                    >Escolha sua Raça<                       |");
+                Console.WriteLine($"|                                                             |");
+                Console.WriteLine($"|(1) - Anão da Colina               ( 8) - Human{genero}             |");
+                Console.WriteLine($"|(2) - Anão da Montanha             ( 9) - Draconat{genero}          |");
+                Console.WriteLine($"|(3) - Alt{genero} Elf{genero}                    (10) - Gnomo da Floresta  |");
+                Console.WriteLine($"|(4) - Elf{genero} da Floresta             (11) - Gnomo das Rochas   |");
+                Console.WriteLine($"|(5) - Elf{genero} Negr{genero}                   (12) - Meio Elf{genero}          |");
+                Console.WriteLine($"|(6) - Halfling dos Pés Leves       (13) - Meio Orc           |");
+                Console.WriteLine($"|(7) - Halfling Robust{genero}             (14) - Tiefling           |");
+                Console.WriteLine($"---------------------------------------------------------------");
 
 
 
@@ -197,16 +184,16 @@ namespace Auto_Rpg_Roll
 
                 Console.Clear();
 
-                Console.WriteLine("---------------------------------------------------------------");
-                Console.WriteLine("|                    >Escolha sua Classe<                     |");
-                Console.WriteLine("|                                                             |");
-                Console.WriteLine("|(1) - Bárbaro                      ( 7) - Guerreiro          |");
-                Console.WriteLine("|(2) - Bardo                        ( 8) - Ladino             |");
-                Console.WriteLine("|(3) - Bruxo                        ( 9) - Mago               |");
-                Console.WriteLine("|(4) - Clérigo                      (10) - Monge              |");
-                Console.WriteLine("|(5) - Druida                       (11) - Paladino           |");
-                Console.WriteLine("|(6) - Feiticeiro                   (12) - Patrulheiro        |");
-                Console.WriteLine("---------------------------------------------------------------");
+                Console.WriteLine($"---------------------------------------------------------------");
+                Console.WriteLine($"|                    >Escolha sua Classe<                     |");
+                Console.WriteLine($"|                                                             |");
+                Console.WriteLine($"|(1) - Bárbar{genero}                      ( 7) - Guerreir{genero}          |");
+                Console.WriteLine($"|(2) - Bard{genero}                        ( 8) - Ladin{genero}             |");
+                Console.WriteLine($"|(3) - Brux{genero}                        ( 9) - Mag{genero}               |");
+                Console.WriteLine($"|(4) - Clérig{genero}                      (10) - Monge              |");
+                Console.WriteLine($"|(5) - Druida                       (11) - Paladin{genero}           |");
+                Console.WriteLine($"|(6) - Feiticeir{genero}                   (12) - Patrulheir{genero}        |");
+                Console.WriteLine($"---------------------------------------------------------------");
                 personagem.Classe = int.Parse(Console.ReadLine());
                 personagem.BonusClasse();
 
@@ -266,7 +253,36 @@ namespace Auto_Rpg_Roll
 
 
 
+        static string Genero(string m) {
+            
+            switch (m)
+            {
+                case "M":
 
+
+                    m = "o";
+                    return m;
+                    break;
+
+                case "F":
+
+                    m = "a";
+                    return m;
+
+                    break;
+
+                case "N":
+                    m = "e";
+                    return m;
+                    break;
+
+
+            }
+            
+            
+            
+            
+            return m; }
         static int Atributo(int m)
         {
 
@@ -315,6 +331,10 @@ namespace Auto_Rpg_Roll
 
                     break;
 
+                    default: 
+                    
+                    
+                    return m;
             }
             return m;
 
@@ -364,7 +384,10 @@ namespace Auto_Rpg_Roll
                     m = -9; ;
 
                     break;
+                default:
+                    m= -100;
 
+                    return m;
             }
             return m;
 

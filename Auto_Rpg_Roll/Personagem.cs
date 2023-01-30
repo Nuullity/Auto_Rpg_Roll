@@ -9,9 +9,8 @@ namespace Auto_Rpg_Roll
 
 
 
-
         public string Nome;
-        public int Idade;
+        public string Idade;
         public int Classe;
         public int Raca;
         public int PontosVida;
@@ -229,7 +228,7 @@ namespace Auto_Rpg_Roll
             switch (Raca)
             {
                 case 1:
-                    RacaName = "Anão da Colina";
+                    RacaName = $"Anão da Colina";
 
                     break;
                 case 2:
