@@ -5,8 +5,7 @@ namespace Auto_Rpg_Roll
 {
     class Personagem
     {
-
-
+       
 
 
 
@@ -25,9 +24,7 @@ namespace Auto_Rpg_Roll
         public String RacaName;
 
 
-
-
-
+ 
 
 
 
@@ -383,7 +380,6 @@ namespace Auto_Rpg_Roll
 
 
         }
-
 
 
 

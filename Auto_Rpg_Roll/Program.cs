@@ -4,7 +4,7 @@ namespace Auto_Rpg_Roll
 {
     internal class Program
     {
-        static void Main(string[] args)
+           static void Main(string[] args)
         {
 
             char genero = 'a';
@@ -15,7 +15,7 @@ namespace Auto_Rpg_Roll
             personagem.Raca = -1;
             personagem.Classe = -1;
 
-
+            
             /*
             Console.WriteLine(" -----------------------------------------------------");
             Console.WriteLine(" Nome:            Idade:             Classe:          ");
@@ -76,7 +76,7 @@ namespace Auto_Rpg_Roll
 
 
 
-            while (pontos_atributos < 0)
+            while (pontos_atributos < 0 || pontos_atributos > 27)
             {
                 pontos_atributos = 27;
                 personagem.C = 0;
@@ -91,13 +91,14 @@ namespace Auto_Rpg_Roll
                 Console.WriteLine($"Voce irá definir agr os pontos de atributos de seu personagem");
                 Console.WriteLine("----------------------------------------------");
                 Console.WriteLine("|          Valor Custo |    Valor Custo      |");
-                Console.WriteLine("|        (1)  8     0  | (5)  12     4       |");
-                Console.WriteLine("|        (2)  9     1  | (6)  13     5       |");
-                Console.WriteLine("|        (3)  10    2  | (7)  14     7       |");
-                Console.WriteLine("|        (4)  11    3  | (8)  15     9       |");
+                Console.WriteLine("|            8     0   |     12     4        |");
+                Console.WriteLine("|            9     1   |     13     5        |");
+                Console.WriteLine("|            10    2   |     14     7        |");
+                Console.WriteLine("|            11    3   |     15     9        |");
                 Console.WriteLine("|                                            |");
-                Console.WriteLine("|        Caso fique com Pontos negativos     |");
-                Console.WriteLine("|   o software irá se resetar automaticamente |");
+                Console.WriteLine("|              >Digite o Valor<              |");
+                Console.WriteLine("|      Caso fique com Pontos negativos       |");
+                Console.WriteLine("|  o software irá se resetar automaticamente |");
                 Console.WriteLine("----------------------------------------------");
 
                 Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Carisma: ");
@@ -223,16 +224,19 @@ namespace Auto_Rpg_Roll
 
 
             Console.WriteLine(" -----------------------------------------------------");
-            Console.WriteLine($" Nome: {personagem.Nome}     Idade: {personagem.Idade}     Classe: {personagem.classeName}         ");
-            Console.WriteLine($" Raça: {personagem.RacaName} Pontos de Vida: {personagem.PontosVida}                     ");
-            Console.WriteLine("                                                      ");
-            Console.WriteLine("                                                      ");
-            Console.WriteLine($" Carisma: {personagem.C} - ({personagem.BC})    ");
-            Console.WriteLine($" Esperteza: {personagem.E} - ({personagem.BE})  ");
-            Console.WriteLine($" Inteligência: {personagem.I} - ({personagem.BI}) ");
-            Console.WriteLine($" Força: {personagem.F} - ({personagem.BF}) ");
-            Console.WriteLine($" Agilidade: {personagem.A} - ({personagem.BA}) ");
-            Console.WriteLine($" Resistencia: {personagem.R} - ({personagem.BR})");
+            Console.WriteLine($" Nome: {personagem.Nome}                             ");
+            Console.WriteLine($" Classe: {personagem.classeName}                     ");
+            Console.WriteLine($" Idade: {personagem.Idade}                           ");
+            Console.WriteLine($" Pontos de Vida: {personagem.PontosVida}             ");
+            Console.WriteLine($" Raça: {personagem.RacaName}                         ");
+            Console.WriteLine($"                                                     ");
+            Console.WriteLine($"                                                     ");
+            Console.WriteLine($" Carisma:      {personagem.C} - Modificador ({personagem.BC})  ");
+            Console.WriteLine($" Esperteza:    {personagem.E} - Modificador ({personagem.BE})  ");
+            Console.WriteLine($" Inteligência: {personagem.I} - Modificador ({personagem.BI})  ");
+            Console.WriteLine($" Força:        {personagem.F} - Modificador ({personagem.BF})  ");
+            Console.WriteLine($" Agilidade:    {personagem.A} - Modificador ({personagem.BA})  ");
+            Console.WriteLine($" Resistencia:  {personagem.R} - Modificador ({personagem.BR})  ");
             Console.WriteLine("                                                      ");
             Console.WriteLine(" -----------------------------------------------------");
 
@@ -269,7 +273,7 @@ namespace Auto_Rpg_Roll
             switch (m)
             {
 
-                case 1:
+                case 8:
 
                     m = 8;
 
@@ -278,35 +282,35 @@ namespace Auto_Rpg_Roll
 
 
                     break;
-                case 2:
+                case 9:
                     m = 9;
 
 
 
                     break;
-                case 3:
+                case 10:
                     m = 10;
 
 
                     break;
-                case 4:
+                case 11:
                     m = 11;
 
 
                     break;
-                case 5:
+                case 12:
                     m = 12;
 
                     break;
-                case 6:
+                case 13:
                     m = 13;
 
                     break;
-                case 7:
+                case 14:
                     m = 14;
 
                     break;
-                case 8:
+                case 15:
                     m = 15;
 
                     break;
@@ -322,7 +326,7 @@ namespace Auto_Rpg_Roll
             switch (m)
             {
 
-                case 1:
+                case 8:
 
                     m = 0;
 
@@ -331,32 +335,32 @@ namespace Auto_Rpg_Roll
 
 
                     break;
-                case 2:
+                case 9:
                     m = -1;
 
 
 
                     break;
-                case 3:
+                case 10:
                     m = -2;
 
                     break;
-                case 4:
+                case 11:
                     m = -3;
 
                     break;
-                case 5:
+                case 12:
                     m = -4;
                     break;
-                case 6:
+                case 13:
 
                     m = -5;
                     break;
-                case 7:
+                case 14:
 
                     m = -7;
                     break;
-                case 8:
+                case 15:
                     m = -9; ;
 
                     break;
