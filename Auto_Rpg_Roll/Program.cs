@@ -8,8 +8,7 @@ namespace Auto_Rpg_Roll
         {
 
             string genero = "a";
-            int provisorio = 0;
-            int pontos_atributos = -1; ; // gambiarra para while 
+            int pontosAtributos = -1; ; // gambiarra para while 
 
             Personagem personagem = new Personagem();
             personagem.Raca = -1;
@@ -63,9 +62,9 @@ namespace Auto_Rpg_Roll
 
 
 
-            while (pontos_atributos < 0 || pontos_atributos > 27)
+            while (pontosAtributos < 0 )
             {
-                pontos_atributos = 27;
+                pontosAtributos = 27;
                 personagem.C = 0;
                 personagem.E = 0;
                 personagem.I = 0;
@@ -77,52 +76,55 @@ namespace Auto_Rpg_Roll
                 // fazer  atribuição de atributos, com base na funçao Atributo
                 Console.WriteLine($"Voce irá definir agr os pontos de atributos de seu personagem");
                 Console.WriteLine("----------------------------------------------");
-                Console.WriteLine("|          Valor Custo |    Valor Custo      |");
-                Console.WriteLine("|            8     0   |     12     4        |");
-                Console.WriteLine("|            9     1   |     13     5        |");
-                Console.WriteLine("|            10    2   |     14     7        |");
-                Console.WriteLine("|            11    3   |     15     9        |");
-                Console.WriteLine("|                                            |");
-                Console.WriteLine("|              >Digite o Valor<              |");
-                Console.WriteLine("|      Caso fique com Pontos negativos       |");
-                Console.WriteLine("|  o software irá se resetar automaticamente |");
-                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("|          Valor Custo  |   Valor Custo      | ");
+                Console.WriteLine("|            8     0    |    12     4        | ");
+                Console.WriteLine("|            9     1    |    13     5        | -Carisma");
+                Console.WriteLine("|            10    2    |    14     7        | -Esperteza");
+                Console.WriteLine("|            11    3    |    15     9        | -Inteligência");
+                Console.WriteLine("|                                            | -Força");
+                Console.WriteLine("|              >Digite o Valor<              | -Agilidade");
+                Console.WriteLine("|      Caso fique com Pontos negativos       | -Resistência");
+                Console.WriteLine("|  o software irá se resetar automaticamente | ");
+                Console.WriteLine("---------------------------------------------- ");
 
-                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Carisma: ");
+                Console.Write($"Voce possui {pontosAtributos} pontos, defina o valor para o atributo Carisma: ");
 
-                provisorio = (int.Parse(Console.ReadLine()));
-                personagem.C = Atributo(provisorio);
-                pontos_atributos = pontos_atributos + Custo(provisorio);
-
-
-                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Esperteza: ");
-                provisorio = (int.Parse(Console.ReadLine()));
-                personagem.E = Atributo(provisorio);
-                pontos_atributos = pontos_atributos + Custo(provisorio);
+                personagem.C = (int.Parse(Console.ReadLine()));
+                pontosAtributos = pontosAtributos + Custo(personagem.C);
 
 
-                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Inteligência: ");
-                provisorio = (int.Parse(Console.ReadLine()));
-                personagem.I = Atributo(provisorio);
-                pontos_atributos = pontos_atributos + Custo(provisorio);
 
 
-                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Força: ");
-                provisorio = (int.Parse(Console.ReadLine()));
-                personagem.F = Atributo(provisorio);
-                pontos_atributos = pontos_atributos + Custo(provisorio);
-
-                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Agilidade: ");
-                provisorio = (int.Parse(Console.ReadLine()));
-                personagem.A = Atributo(provisorio);
-                pontos_atributos = pontos_atributos + Custo(provisorio);
+                Console.Write($"Voce possui {pontosAtributos} pontos, defina o valor para o atributo Esperteza: ");
+                personagem.E = (int.Parse(Console.ReadLine()));
+                pontosAtributos = pontosAtributos + Custo(personagem.E);
 
 
-                Console.Write($"Voce possui {pontos_atributos} pontos, defina o valor para o atributo Resistência: ");
-                provisorio = (int.Parse(Console.ReadLine()));
-                personagem.R = Atributo(provisorio);
-                pontos_atributos = pontos_atributos + Custo(provisorio);
+                Console.Write($"Voce possui {pontosAtributos} pontos, defina o valor para o atributo Inteligência: ");
+                personagem.I = (int.Parse(Console.ReadLine()));
+                pontosAtributos = pontosAtributos + Custo(personagem.I);
+
+
+                Console.Write($"Voce possui {pontosAtributos} pontos, defina o valor para o atributo Força: ");
+                personagem.F = (int.Parse(Console.ReadLine()));
+                pontosAtributos = pontosAtributos + Custo(personagem.F);
+
+                Console.Write($"Voce possui {pontosAtributos} pontos, defina o valor para o atributo Agilidade: ");
+                personagem.A = (int.Parse(Console.ReadLine()));
+                pontosAtributos = pontosAtributos + Custo(personagem.A);
+
+
+                Console.Write($"Voce possui {pontosAtributos} pontos, defina o valor para o atributo Resistência: ");
+
+                personagem.R = (int.Parse(Console.ReadLine()));
+                pontosAtributos = pontosAtributos + Custo(personagem.R);
+
+
+
+
                 Console.Clear();
+
+
             }
 
 
