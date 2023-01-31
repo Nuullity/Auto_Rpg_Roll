@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marcos\\Documents\\GitHub\\Rpg - Ceifar (CS)\\Auto_Rpg_Roll\\Auto_Rpg_Roll\\Auto_Rpg_Roll.csproj",
+      "projectUniqueName": "C:\\Users\\Marcos\\Documents\\GitHub\\Auto_Rpg_Roll\\Auto_Rpg_Roll\\Auto_Rpg_Roll.csproj",
       "projectName": "Auto_Rpg_Roll",
-      "projectPath": "C:\\Users\\Marcos\\Documents\\GitHub\\Rpg - Ceifar (CS)\\Auto_Rpg_Roll\\Auto_Rpg_Roll\\Auto_Rpg_Roll.csproj",
+      "projectPath": "C:\\Users\\Marcos\\Documents\\GitHub\\Auto_Rpg_Roll\\Auto_Rpg_Roll\\Auto_Rpg_Roll.csproj",
       "packagesPath": "C:\\Users\\Marcos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marcos\\Documents\\GitHub\\Rpg - Ceifar (CS)\\Auto_Rpg_Roll\\Auto_Rpg_Roll\\obj\\",
+      "outputPath": "C:\\Users\\Marcos\\Documents\\GitHub\\Auto_Rpg_Roll\\Auto_Rpg_Roll\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Visual Studio\\componentes\\NuGetPackages"

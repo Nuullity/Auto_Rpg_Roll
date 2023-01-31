@@ -10,7 +10,7 @@ namespace Auto_Rpg_Roll
 
 
         public string Nome;
-        public string Idade;
+        public int Idade;
         public int Classe;
         public int Raca;
         public int PontosVida;
